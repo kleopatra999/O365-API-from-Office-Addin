@@ -11,6 +11,11 @@ These challenges were heavy drivers in determining the architecture of this samp
 ## Setup ##
 To setup the application, register a new Azure AD application through the Azure Management Portal or using the Add Connected Service Wizard. The add-in needs "Read Contacts" permissions against Exchange Online.
 
+If you manually register the application in Azure AD, you should update **ida:ClientId** and **ida:ClientSecret** appSettings in the web.config with values from your registration:
+
+    <add key="ida:ClientId" value="a8d33bab-8a04-48a5-83dd-8492e63db131" />
+    <add key="ida:ClientSecret" value="iq+5dGcYBLhZhvrzyZ25/dAyIYG3SUmmKiAv2MjHd40=" />
+
 The add-in authenticated against Office 365 and then queries Contacts in Exchange Online, so it is suggested that you add a few contacts to test with.
 
 ## Utils/TokenHelper.cs ##
