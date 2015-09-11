@@ -1,0 +1,13 @@
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\roslyn\csc.exe
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\roslyn\vbc.exe
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\roslyn\VBCSCompiler.exe
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\Office365FromAddin.Office.dll.config

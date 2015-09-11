@@ -1,0 +1,101 @@
+﻿@model String
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div id="divLogin">
+        <p>Please sign in with Office 365 so the add-in can query your contacts in Exchange Online.</p>
+        <button class="btn btn-primary btn-block" id="btnSignIn" disabled>Sign-in with Office 365</button>
+    </div>
+    <div id="divBody" style="display: none;">
+        <h2>My Contacts</h2>
+        <ul id="theList"><li>Loading...</li></ul>
+        <button id="btnInsert" class="btn btn-primary btn-block" style="display: none;">Insert into Excel</button>
+    </div>
+    <div id="modelSignin" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <h2>Waiting for sign-in...</h2>
+                <p>This dialog will automatically close when the sign-in to Office 365 completes.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- SignalR stuff -->
+    <script src="~/Scripts/jquery.signalR-2.1.2.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+
+    <!-- App scripts -->
+    <script type="text/javascript">
+        //initialize office and add client side app logic
+        var access_token = null, hub = null, signalr_id = null, data = null;
+        Office.initialize = function (reason) {
+            $(document).ready(function () {
+                //setup signalR stuff
+                hub = $.connection.tokenHub;
+
+                // Create a function that the hub can call to broadcast oauth access tokens from sign-in
+                hub.client.oAuthComplete = function (token) {
+                    //set access token
+                    access_token = token;
+
+                    //toggle UI
+                    $("#modelSignin").modal("hide");
+                    $("#divLogin").hide();
+                    $("#divBody").show();
+
+                    //get contacts
+                    $.ajax({
+                        url: "https://outlook.office.com/api/v1.0/me/contacts",
+                        beforeSend : function(xhr) {
+                            xhr.setRequestHeader("Authorization", "Bearer " + access_token);
+                        },
+                        success: function (d) {
+                            data = d.value;
+                            var html = "";
+                            $(data).each(function (i, e) {
+                                html += "<li>" + e.DisplayName + "</li>";
+                            });
+                            $("#theList").html(html);
+
+                            //show the insert button and wire up
+                            $("#btnInsert").show();
+                            $("#btnInsert").click(function () {
+                                //build the Office table to insert the data
+                                var officeTable = new Office.TableData();
+                                officeTable.headers = ["First Name", "Last Name", "Email"];
+                                officeTable.rows = [];
+                                $(data).each(function (i, e) {
+                                    officeTable.rows.push([e.GivenName, e.Surname, e.EmailAddresses[0].Address]);
+                                });
+
+                                //write the data to Excel as a table
+                                Office.context.document.setSelectedDataAsync(
+                                    officeTable, { coercionType: Office.CoercionType.Table },
+                                      function (asyncResult) {
+                                          //ignore...should check for success
+                                      });
+                            });
+                        }
+                    });
+                };
+
+                // Start the connection.
+                $.connection.hub.start().done(function () {
+                    signalr_id = $.connection.hub.id;
+
+                    //now that signalr_id is initialized we can wire-up sign-in event
+                    $("#btnSignIn").prop("disabled", false);
+                    $("#btnSignIn").click(function () {
+                        $("#btnSignIn").prop("true", false);
+                        $("#modelSignin").modal("show");
+                        window.open('@ViewData["redirect"]'.replace("signalr_id", signalr_id), "oauth", "menubar=0,location=1,resizable=1,scrollbars=0,status=0,toolbar=0,width=650,height=450");
+                    });
+                });
+            });
+        };
+    </script>
+}

@@ -1,0 +1,7 @@
+False
+04eb0c9d-9944-459e-80d5-cde05659635b1bfaf443-a11b-4e38-9fcf-b658d5f895f3
+{fd79632f-6e2c-4357-95a6-a23f79cdadd1}{7b7b00bb-ff6d-43ee-90c3-919723c1f436}
+{8054fcaf-d2bf-43a5-ab7b-6038b071cfbe}
+1.0.0.0
+Office365FromAddin.Office
+_layouts/15/

@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Sign-in Complete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sign-in Complete</h2>
+<p>Thank you for signing into Office 365. This popup will now close and the add-in should be able to communicate with Office 365.</p>
+
+@section Scripts {
+<!-- App scripts -->
+<script type="text/javascript">
+    window.close();
+</script>
+}

@@ -1,0 +1,2 @@
+bin\Debug\OfficeAppManifests\Office365FromAddin.OfficeManifest.xml
+C:\Projects\Office365\Office365FromAddin\Office365FromAddin.Office\bin\Debug\Office365FromAddin.Office.debugapp

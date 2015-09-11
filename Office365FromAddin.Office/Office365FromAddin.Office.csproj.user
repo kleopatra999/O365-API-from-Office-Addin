@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SharePointSiteUrl>https://rzdemos.sharepoint.com/sites/dev/</SharePointSiteUrl>
+    <GeneratedFeatureId>04eb0c9d-9944-459e-80d5-cde05659635b</GeneratedFeatureId>
+    <GeneratedPackageId>1bfaf443-a11b-4e38-9fcf-b658d5f895f3</GeneratedPackageId>
+    <GeneratedModuleId>{fd79632f-6e2c-4357-95a6-a23f79cdadd1}</GeneratedModuleId>
+    <GeneratedListId>{7b7b00bb-ff6d-43ee-90c3-919723c1f436}</GeneratedListId>
+    <GeneratedProductId>{8054fcaf-d2bf-43a5-ab7b-6038b071cfbe}</GeneratedProductId>
+    <GeneratedAppVersion>1.0.0.0</GeneratedAppVersion>
+    <GeneratedClientSecret>vHp7TV8XoQ4Vtbx5XIvFPpLA4N0CvmeF4bD1+UzzbG4=</GeneratedClientSecret>
+  </PropertyGroup>
+</Project>
