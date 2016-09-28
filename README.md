@@ -1,5 +1,8 @@
 # Calling Office 365 APIs from an Office add-in
-This repository contains a sample that shows how to connect to the Office 365 APIs from an Office Add-in. This can be accomplished a number of ways, but has has the following challenges:
+
+>**Note:**  We will be removing this sample from the site on November 30, 2016. If you’d like to keep a copy of this sample for your own reference, please download or clone the repo.
+
+This repository contains a sample that shows how to connect to the Office 365 APIs from an Office Add-in. This can be accomplished a number of ways, but has the following challenges:
 
 - Office add-ins currently have no concept of identity (even though users sign-in to the modern Office).
 - Office add-ins can only display pages from domains that are explicitly registered in the add-in manifest. When an add-in tries to display an unregistered domain, the page will get kicked out to a popup.
