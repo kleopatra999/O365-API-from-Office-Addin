@@ -1,6 +1,6 @@
 # Calling Office 365 APIs from an Office add-in
 
->**Note:**  We will be removing this sample from the site on November 30, 2016. If you’d like to keep a copy of this sample for your own reference, please download or clone the repo.
+>**Note:**  We will be removing this sample from the site on December 15, 2016. If you’d like to keep a copy of this sample for your own reference, please download or clone the repo.
 
 This repository contains a sample that shows how to connect to the Office 365 APIs from an Office Add-in. This can be accomplished a number of ways, but has the following challenges:
 
